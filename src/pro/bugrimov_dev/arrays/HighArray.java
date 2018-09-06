@@ -1,4 +1,4 @@
-package pro.bugrimov_dev;
+package pro.bugrimov_dev.arrays;
 
 public class HighArray {
 
@@ -6,7 +6,7 @@ public class HighArray {
 
     private int nElements;
 
-    public HighArray(final int max) {
+    HighArray(final int max) {
         arr = new long[max];
         nElements = 0;
     }
@@ -16,7 +16,7 @@ public class HighArray {
      * @param searchKey значение
      * @return найден/не найден
      */
-    public boolean find(long searchKey) {
+    boolean find(long searchKey) {
         int j;
         for (j = 0; j < nElements; j++) {
             if (arr[j] == searchKey)
@@ -29,12 +29,12 @@ public class HighArray {
         }
     }
 
-    public void insert(long value) {
+    void insert(long value) {
         arr[nElements] = value;
         nElements++;
     }
 
-    public boolean delete(long value) {
+    boolean delete(long value) {
         int j;
         for (j = 0; j < nElements; j++) {
             if (value == arr[j])
@@ -49,5 +49,12 @@ public class HighArray {
             nElements--;
             return true;
         }
+    }
+
+    void display() {
+        for (int i = 0; i < nElements; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("");
     }
 }
